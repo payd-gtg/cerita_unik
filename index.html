@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Editorial | Premium Interior</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'warm-cream': '#F5F2EE',
+                        'wood-brown': '#483428',
+                        'soft-black': '#2D2926',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #F5F2EE; }
+        .newspaper-text { text-align: justify; text-justify: inter-word; line-height: 1.8; }
+        #sidebar { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 100; }
+        .sidebar-closed { transform: translateX(-100%); }
+        .sidebar-open { transform: translateX(0); }
+        .content-overlay { margin-top: -80px; position: relative; z-index: 10; }
+        .featured-img-container { max-width: 85%; }
+        
+        /* Tambahan CSS agar gambar di galeri konsisten */
+        .gallery-img { width: 100%; height: 100%; object-fit: cover; }
+    </style>
+</head>
+<body class="font-sans text-soft-black overflow-x-hidden">
+
+    <div class="fixed top-6 right-6 z-[110] w-32 md:w-48 bg-white/30 backdrop-blur-md p-1 rounded shadow-sm">
+        <img src="src/Logo SAI.PNG" alt="Brand Logo" class="w-full h-auto object-contain">
+    </div>
+
+    <button id="menuBtn" class="fixed top-6 left-6 z-[110] p-2 bg-wood-brown text-white rounded active:scale-95 transition shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+
+    <aside id="sidebar" class="fixed top-0 left-0 h-full w-72 bg-white shadow-2xl sidebar-closed flex flex-col">
+        <div id="navLogoContainer" class="w-full aspect-square bg-wood-brown flex items-center justify-center border-b border-white/10 p-6">
+            <img src="src/Logo SAI.PNG" alt="Brand Logo" class="w-full h-auto object-contain filter brightness-0 invert opacity-90">
+        </div>
+        
+        <nav class="flex-1 px-8 py-10 space-y-6 bg-white overflow-y-auto">
+            <a href="#home" class="nav-link group flex items-center gap-3 text-xl font-serif font-bold hover:text-wood-brown transition">
+                <span class="h-[1px] w-0 group-hover:w-4 bg-wood-brown transition-all"></span> Home
+            </a>
+            <a href="#sumbali" class="nav-link group flex items-center gap-3 text-xl font-serif font-bold hover:text-wood-brown transition">
+                <span class="h-[1px] w-0 group-hover:w-4 bg-wood-brown transition-all"></span> Kakek Sumbali
+            </a>
+            <a href="#parijem" class="nav-link group flex items-center gap-3 text-xl font-serif font-bold hover:text-wood-brown transition">
+                <span class="h-[1px] w-0 group-hover:w-4 bg-wood-brown transition-all"></span> Mbah Parijem
+            </a>
+            <a href="#kontak" class="nav-link group flex items-center gap-3 text-xl font-serif font-bold hover:text-wood-brown transition">
+                <span class="h-[1px] w-0 group-hover:w-4 bg-wood-brown transition-all"></span> Kontak
+            </a>
+
+            <div class="pt-10 border-t border-gray-100">
+                <p class="text-[10px] uppercase tracking-widest font-bold opacity-40 mb-4">Connect With Us</p>
+                <div class="flex gap-5 text-wood-brown text-xl">
+                    <a href="https://www.instagram.com/mlky.nano?igsh=MTd0b2x5aGk0bzJlNw==" target="_blank" class="hover:scale-110 transition"><i class="fa-brands fa-instagram">payd</i></a>
+                    <a href="https://www.instagram.com/syarifahkr?igsh=M29mYTVraXM4bjIw" target="_blank" class="hover:scale-110 transition"><i class="fa-brands fa-instagram">sipa</i></a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="min-h-screen pt-32 pb-12 px-6 max-w-7xl mx-auto">
+        <header id="home" class="mb-16 scroll-mt-32">
+            <p class="text-xs font-bold tracking-[0.3em] uppercase mb-4 opacity-70 italic">payd & sipa</p>
+            <h1 class="font-serif text-5xl md:text-8xl font-black leading-[0.9] uppercase mb-8">Cerita Unik</h1>
+            <p class="newspaper-text text-sm opacity-80 max-w-md">
+               Hasil asesment lansia <b> Fahrid dan Syarifah </b> terima kasih sudah mampir selamat membaca.
+            </p>
+        </header>
+
+        <section id="sumbali" class="relative flex flex-col items-center scroll-mt-32">
+            <div class="featured-img-container relative w-full flex flex-col items-center">
+                <p class="w-full text-right text-[10px] font-bold mb-2 uppercase tracking-widest italic">28 Januari 2026</p>
+                <img src="src/sumbali1.jpeg" alt="Kakek Sumbali" 
+                     class="w-full h-[300px] md:h-[500px] object-cover rounded-sm grayscale-[20%] hover:grayscale-0 transition duration-500 shadow-xl">
+            </div>
+
+            <div class="content-overlay w-full md:w-[65%] bg-wood-brown p-8 md:p-10 text-warm-cream shadow-2xl">
+                <h2 class="font-serif text-2xl md:text-3xl font-bold leading-tight uppercase mb-6">kakek sumbali</h2>
+                <div class="space-y-4 opacity-90 text-sm">
+                    <p class="newspaper-text">Di balik setiap garis keriput di wajah Kakek Sumbali, tersimpan ketangguhan yang tak banyak orang miliki. Di usianya yang ke-75 beliau menjual tanaman dipinggir jalan, ia bukan hanya bertahan—ia berjuang dengan satu mata yang masih setia menatap dunia dan sebelahnya sudah buram, dan dua tangan yang memilih untuk bekerja daripada mengulurkan tangan meminta.
+Kesendiriannya bukanlah pilihan, tapi kenyataan yang ia jalani dengan kepala tegak. Tanpa anak, tanpa keluarga yang mendampingi, ia menjadikan tanaman-tanamannya sebagai saksi bisu ketekunannya. Setiap daun yang tumbuh adalah bukti bahwa kehidupan terus berdenyut, bahkan di tengah keterbatasan.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-warm-cream/10 text-[10px] tracking-widest uppercase">
+                    <a href="https://maps.app.goo.gl/fxAQowqnGWWVgZpD6" target="_blank" style="color:#2563eb;"><i> Klik Disini Untuk Lokasi</i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <h2 class="font-serif text-4xl uppercase border-b border-wood-brown mb-10 text-center">Galeri kek Sumbali</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="aspect-square bg-gray-200 overflow-hidden">
+                    <img src="src/sumbali2.jpeg" class="gallery-img">
+                </div>
+                <div class="aspect-square bg-gray-200 overflow-hidden">
+                    <img src="src/sumbali3.jpeg" class="gallery-img">
+                </div>
+            </div>
+        </section>
+
+        <section id="parijem" class="relative flex flex-col items-center scroll-mt-32 pt-20">
+            <div class="featured-img-container relative w-full flex flex-col items-center">
+                <p class="w-full text-right text-[10px] font-bold mb-2 uppercase tracking-widest italic">28 Januari 2026</p>
+                <img src="src/parijem1.jpeg" alt="Mbah Parijem" 
+                     class="w-full h-[300px] md:h-[500px] object-cover rounded-sm grayscale-[20%] hover:grayscale-0 transition duration-500 shadow-xl">
+            </div>
+
+            <div class="content-overlay w-full md:w-[65%] bg-wood-brown p-8 md:p-10 text-warm-cream shadow-2xl">
+                <h2 class="font-serif text-2xl md:text-3xl font-bold leading-tight uppercase mb-6">Mbah Parijem</h2>
+                <div class="space-y-4 opacity-90 text-sm">
+                    <p class="newspaper-text">Di usia 85 tahun, Mbah Parijem masih mencari rebung di hutan dan memijat untuk sesuap nasi. Delapan anaknya tak cukup mengangkat beban hidupnya. Satu dari mereka hanya makan, tidur, merokok, dan kerap mengambil uang hasil kerja ibunya.
+
+Di masa seharusnya tenang, tubuh rentanya masih dipaksa bekerja. Tak ada keluh. Hanya tangan keriput yang terus berusaha, dan hati seorang ibu yang tak pernah berhenti mengasihi.
+
+Ia adalah contoh nyata bahwa cinta tak selalu dibalas dengan adil. Tapi ketabahan sejati adalah saat seseorang tetap memberi, meski hidup tak memberinya kemudahan.
+
+Di balik senyapnya, Mbah Parijem mengajar kita arti ikhlas yang terdalam: berjuang bukan karena ringan bebannya, tapi karena hati memilih untuk tetap berdiri. Meski lelah, meski sendirian, ia terus melangkah—sebuah pelajaran hidup dari seorang perempuan tua yang lebih kuat dari kita semua.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-warm-cream/10 text-[10px] tracking-widest uppercase">
+                    <a href="https://maps.app.goo.gl/aNjPc19BfuhxCQSx5" target="_blank" style="color:#2563eb;"><i> Klik Disini Untuk Lokasi</i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <h2 class="font-serif text-4xl uppercase border-b border-wood-brown mb-10 text-center">Galeri Mbah Parijem</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="aspect-square bg-gray-200 overflow-hidden">
+                    <img src="src/parijem1.jpeg" class="gallery-img">
+                </div>
+                <div class="aspect-square bg-gray-200 overflow-hidden">
+                    <img src="src/parijem2.jpeg" class="gallery-img">
+                </div>
+            </div>
+        </section>
+
+        <footer id="kontak" class="py-20 scroll-mt-32 bg-soft-black text-warm-cream -mx-6 px-10">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+                <div class="max-w-sm">
+                    <h2 class="font-serif text-4xl uppercase mb-6">Kontak Kami</h2>
+                    <p class="opacity-70 mb-8">Hubungi kami untuk kolaborasi desain editorial yang unik.</p>
+                </div>
+                <div>
+                    <p class="text-xs uppercase tracking-[0.3em] mb-6 font-bold opacity-50">Follow Us</p>
+                    <div class="flex gap-8 text-3xl">
+                        <a href="https://www.instagram.com/mlky.nano?igsh=MTd0b2x5aGk0bzJlNw=="target="_blank" class="hover:text-wood-brown transition"><i class="fa-brands fa-instagram"> payd</i></a>
+                        <a href="https://www.instagram.com/syarifahkr?igsh=M29mYTVraXM4bjIw" target="_blank" class="hover:text-wood-brown transition"><i class="fa-brands fa-instagram"> sipa</i></a>
+                        <a href="#" class="hover:text-wood-brown transition"><i></i>klik logo untuk folow</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <div id="overlay" class="fixed inset-0 bg-black/40 hidden z-90"></div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.getElementById('menuBtn');
+        const overlay = document.getElementById('overlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function toggleSidebar() {
+            const isOpen = sidebar.classList.contains('sidebar-open');
+            if(isOpen) {
+                sidebar.classList.replace('sidebar-open', 'sidebar-closed');
+                overlay.classList.add('hidden');
+            } else {
+                sidebar.classList.replace('sidebar-closed', 'sidebar-open');
+                overlay.classList.remove('hidden');
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                setTimeout(() => { toggleSidebar(); }, 300); 
+            });
+        });
+    </script>
+</body>
+</html>
